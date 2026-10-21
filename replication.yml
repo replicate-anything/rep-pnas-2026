@@ -6,7 +6,7 @@ paper:
   study_ref: main
   title: "Digital literacy alters engagement with emotionally manipulative political content on social media"
   year: 2025
-  authors: "Kristina Aleksandrovna Pedersen, Ferdinand Geissler, Felix Hartmann, Johannes Giesecke, Macartan Humphreys, Heike Klüver"
+  authors: "Kristina A. Pedersen, Ferdinand Geissler, Felix Hartmann, Johannes Giesecke, Macartan Humphreys, Heike Klüver"
   dependencies:
     - tidyverse
     - scales
@@ -31,11 +31,13 @@ collections:
 
 repo: replicate-anything/rep-pnas-2026
 
+# sidebar: ordered exhibit families + reserved Steps (prep/transform block).
 sidebar:
   - Figures
   - Key numbers
   - SI Figures
   - SI Tables
+  - Steps
 
 steps:
   - id: fig_1
