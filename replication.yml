@@ -1,0 +1,623 @@
+paper:
+  study_handle: rep-pnas
+  title: "Digital literacy alters engagement with emotionally manipulative political content on social media"
+  year: 2025
+  authors: "Kristina Aleksandrovna Pedersen, Ferdinand Geissler, Felix Hartmann, Johannes Giesecke, Macartan Humphreys, Heike Klüver"
+  dependencies:
+    - tidyverse
+    - scales
+    - fixest
+    - estimatr
+    - broom
+    - haven
+    - knitr
+    - ggrepel
+    - ggh4x
+    - ggalluvial
+
+maintainer:
+  name: Macartan Humphreys
+  email: macartan.humphreys@wzb.eu
+
+languages:
+  - r
+
+steps:
+  - id: fig_1
+    type: figure
+    label: Figure 1
+    description: Workshop effects on engagement by content type
+    engine: r
+    inputs:
+      - data/wave_9.rds
+      - data/wave_10.rds
+    code: code/fig_1.R
+    format: format_fig_1
+    outputs:
+      - outputs/fig_1.png
+      - outputs/fig_1_estimates.rds
+
+  - id: fig_1_format
+    type: format
+    parent: fig_1
+    code: code/fig_1.R
+
+  - id: fig_2
+    type: figure
+    label: Figure 2
+    description: Effects by sending party and co-partisanship
+    engine: r
+    inputs:
+      - data/wave_9.rds
+    code: code/fig_2.R
+    format: format_fig_2
+    outputs:
+      - outputs/fig_2.png
+      - outputs/fig_2_wald.rds
+      - outputs/fig_2_estimates.rds
+
+  - id: fig_2_format
+    type: format
+    parent: fig_2
+    code: code/fig_2.R
+
+  - id: fig_s2
+    type: figure
+    label: Figure S2
+    description: Classification of open-ended platform comments
+    engine: r
+    inputs:
+      - data/comment_classification.csv
+    code: code/fig_s2.R
+    format: format_fig_s2
+    outputs:
+      - outputs/fig_s2.png
+
+  - id: fig_s2_format
+    type: format
+    parent: fig_s2
+    code: code/fig_s2.R
+
+  - id: fig_s3
+    type: figure
+    label: Figure S3
+    description: Outcome levels by content type and treatment
+    engine: r
+    inputs:
+      - data/wave_9.rds
+      - data/wave_10.rds
+    code: code/fig_s3.R
+    format: format_fig_s3
+    outputs:
+      - outputs/fig_s3.png
+
+  - id: fig_s3_format
+    type: format
+    parent: fig_s3
+    code: code/fig_s3.R
+
+  - id: fig_s4
+    type: figure
+    label: Figure S4
+    description: Wave 1 effects by emotional strategy
+    engine: r
+    inputs:
+      - data/wave_9.rds
+    code: code/fig_s4.R
+    format: format_fig_s4
+    outputs:
+      - outputs/fig_s4.png
+
+  - id: fig_s4_format
+    type: format
+    parent: fig_s4
+    code: code/fig_s4.R
+
+  - id: fig_s5
+    type: figure
+    label: Figure S5
+    description: Treatment by content-type interactions
+    engine: r
+    inputs:
+      - data/wave_9.rds
+      - data/wave_10.rds
+    code: code/fig_s5.R
+    format: format_fig_s5
+    outputs:
+      - outputs/fig_s5.png
+
+  - id: fig_s5_format
+    type: format
+    parent: fig_s5
+    code: code/fig_s5.R
+
+  - id: fig_s6
+    type: figure
+    label: Figure S6
+    description: Attrition on standardized pre-treatment covariates
+    engine: r
+    inputs:
+      - data/df_w9_w10.rds
+    code: code/fig_s6.R
+    format: format_fig_s6
+    outputs:
+      - outputs/fig_s6.png
+
+  - id: fig_s6_format
+    type: format
+    parent: fig_s6
+    code: code/fig_s6.R
+
+  - id: fig_s7
+    type: figure
+    label: Figure S7
+    description: Treatment by covariate interactions on attrition
+    engine: r
+    inputs:
+      - data/df_w9_w10.rds
+    code: code/fig_s7.R
+    format: format_fig_s7
+    outputs:
+      - outputs/fig_s7.png
+
+  - id: fig_s7_format
+    type: format
+    parent: fig_s7
+    code: code/fig_s7.R
+
+  - id: fig_s8
+    type: figure
+    label: Figure S8
+    description: Wave 1 engagement effects among non-attriters
+    engine: r
+    inputs:
+      - data/wave_9.rds
+      - data/df_w9_w10.rds
+    code: code/fig_s8.R
+    format: format_fig_s8
+    outputs:
+      - outputs/fig_s8.png
+
+  - id: fig_s8_format
+    type: format
+    parent: fig_s8
+    code: code/fig_s8.R
+
+  - id: fig_s9
+    type: figure
+    label: Figure S9
+    description: Wave 2 effects excluding repeated video exposure
+    engine: r
+    parents:
+      - repeated_videos
+    inputs:
+      - outputs/repeated_videos.rds
+    code: code/fig_s9.R
+    format: format_fig_s9
+    outputs:
+      - outputs/fig_s9.png
+
+  - id: fig_s9_format
+    type: format
+    parent: fig_s9
+    code: code/fig_s9.R
+
+  - id: fig_s10
+    type: figure
+    label: Figure S10
+    description: Party identification effects conditional on prior identification
+    engine: r
+    inputs:
+      - data/df_w9_w10.rds
+    code: code/fig_s10.R
+    format: format_fig_s10
+    outputs:
+      - outputs/fig_s10.png
+
+  - id: fig_s10_format
+    type: format
+    parent: fig_s10
+    code: code/fig_s10.R
+
+  - id: fig_s11
+    type: figure
+    label: Figure S11
+    description: Party-identification transitions, full sample
+    engine: r
+    parents:
+      - pid_transitions
+    inputs:
+      - outputs/pid_transitions.rds
+    code: code/fig_s11.R
+    format: format_fig_s11
+    outputs:
+      - outputs/fig_s11.png
+
+  - id: fig_s11_format
+    type: format
+    parent: fig_s11
+    code: code/fig_s11.R
+
+  - id: fig_s12
+    type: figure
+    label: Figure S12
+    description: Party-identification transitions, treatment group
+    engine: r
+    parents:
+      - pid_transitions
+    inputs:
+      - outputs/pid_transitions.rds
+    code: code/fig_s12.R
+    format: format_fig_s12
+    outputs:
+      - outputs/fig_s12.png
+
+  - id: fig_s12_format
+    type: format
+    parent: fig_s12
+    code: code/fig_s12.R
+
+  - id: fig_s13
+    type: figure
+    label: Figure S13
+    description: Party-identification transitions, control group
+    engine: r
+    parents:
+      - pid_transitions
+    inputs:
+      - outputs/pid_transitions.rds
+    code: code/fig_s13.R
+    format: format_fig_s13
+    outputs:
+      - outputs/fig_s13.png
+
+  - id: fig_s13_format
+    type: format
+    parent: fig_s13
+    code: code/fig_s13.R
+
+  - id: fig_s14
+    type: figure
+    label: Figure S14
+    description: Post-treatment PTV effects at each group's mean pre-treatment PTV
+    engine: r
+    inputs:
+      - data/df_w9_w10.rds
+    code: code/fig_s14.R
+    format: format_fig_s14
+    outputs:
+      - outputs/fig_s14.png
+      - outputs/fig_s14_estimates.rds
+
+  - id: fig_s14_format
+    type: format
+    parent: fig_s14
+    code: code/fig_s14.R
+
+  - id: fig_s15
+    type: figure
+    label: Figure S15
+    description: Pooled engagement effects without video fixed effects
+    engine: r
+    inputs:
+      - data/wave_9.rds
+      - data/wave_10.rds
+    code: code/fig_s15.R
+    format: format_fig_s15
+    outputs:
+      - outputs/fig_s15.png
+
+  - id: fig_s15_format
+    type: format
+    parent: fig_s15
+    code: code/fig_s15.R
+
+  - id: tab_s1
+    type: table
+    label: Table S1
+    description: Descriptives on videos and video behavior
+    engine: r
+    inputs:
+      - data/wave_9.rds
+      - data/wave_10.rds
+    code: code/tab_s1.R
+    format: format_tab_s1
+    outputs:
+      - outputs/tab_s1.html
+
+  - id: tab_s1_format
+    type: format
+    parent: tab_s1
+    code: code/tab_s1.R
+
+  - id: tab_s3
+    type: table
+    label: Table S3
+    description: Published mean pairwise Cohen's kappa
+    engine: r
+    code: code/tab_s3.R
+    format: format_tab_s3
+    outputs:
+      - outputs/tab_s3.html
+
+  - id: tab_s3_format
+    type: format
+    parent: tab_s3
+    code: code/tab_s3.R
+
+  - id: tab_s4_experiment
+    type: table
+    label: Table S4 experiment sample
+    description: Party by strategy counts for the 400 experiment videos
+    engine: r
+    inputs:
+      - data/wave_9.rds
+    code: code/tab_s4_experiment.R
+    format: format_tab_s4_experiment
+    outputs:
+      - outputs/tab_s4_experiment.html
+
+  - id: tab_s4_experiment_format
+    type: format
+    parent: tab_s4_experiment
+    code: code/tab_s4_experiment.R
+
+  - id: tab_s5
+    type: table
+    label: Table S5
+    description: Emotional versus neutral, Like, Wave 1
+    engine: r
+    parents:
+      - type_contrasts
+    inputs:
+      - outputs/type_contrasts.rds
+    code: code/tab_s5.R
+    format: format_tab_s5
+    outputs:
+      - outputs/tab_s5.html
+
+  - id: tab_s5_format
+    type: format
+    parent: tab_s5
+    code: code/tab_s5.R
+
+  - id: tab_s6
+    type: table
+    label: Table S6
+    description: Emotional versus neutral, Report, Wave 1
+    engine: r
+    parents:
+      - type_contrasts
+    inputs:
+      - outputs/type_contrasts.rds
+    code: code/tab_s6.R
+    format: format_tab_s6
+    outputs:
+      - outputs/tab_s6.html
+
+  - id: tab_s6_format
+    type: format
+    parent: tab_s6
+    code: code/tab_s6.R
+
+  - id: tab_s7
+    type: table
+    label: Table S7
+    description: Emotional versus entertainment, Like, Wave 1
+    engine: r
+    parents:
+      - type_contrasts
+    inputs:
+      - outputs/type_contrasts.rds
+    code: code/tab_s7.R
+    format: format_tab_s7
+    outputs:
+      - outputs/tab_s7.html
+
+  - id: tab_s7_format
+    type: format
+    parent: tab_s7
+    code: code/tab_s7.R
+
+  - id: tab_s8
+    type: table
+    label: Table S8
+    description: Emotional versus entertainment, Report, Wave 1
+    engine: r
+    parents:
+      - type_contrasts
+    inputs:
+      - outputs/type_contrasts.rds
+    code: code/tab_s8.R
+    format: format_tab_s8
+    outputs:
+      - outputs/tab_s8.html
+
+  - id: tab_s8_format
+    type: format
+    parent: tab_s8
+    code: code/tab_s8.R
+
+  - id: tab_s9
+    type: table
+    label: Table S9
+    description: Attrition by treatment condition
+    engine: r
+    inputs:
+      - data/df_w9_w10.rds
+    code: code/tab_s9.R
+    format: format_tab_s9
+    outputs:
+      - outputs/tab_s9.html
+      - outputs/tab_s9_estimates.rds
+
+  - id: tab_s9_format
+    type: format
+    parent: tab_s9
+    code: code/tab_s9.R
+
+  - id: tab_s10
+    type: table
+    label: Table S10
+    description: AfD triple interaction, Wave 1
+    engine: r
+    parents:
+      - afd_3way
+    inputs:
+      - outputs/afd_3way.rds
+    code: code/tab_s10.R
+    format: format_tab_s10
+    outputs:
+      - outputs/tab_s10.html
+
+  - id: tab_s10_format
+    type: format
+    parent: tab_s10
+    code: code/tab_s10.R
+
+  - id: tab_s11
+    type: table
+    label: Table S11
+    description: AfD triple interaction, Wave 2
+    engine: r
+    parents:
+      - afd_3way
+    inputs:
+      - outputs/afd_3way.rds
+    code: code/tab_s11.R
+    format: format_tab_s11
+    outputs:
+      - outputs/tab_s11.html
+
+  - id: tab_s11_format
+    type: format
+    parent: tab_s11
+    code: code/tab_s11.R
+
+  - id: tab_s12
+    type: table
+    label: Table S12
+    description: Effect of the workshop on AfD identification
+    engine: r
+    inputs:
+      - data/df_w9_w10.rds
+    code: code/tab_s12.R
+    format: format_tab_s12
+    outputs:
+      - outputs/tab_s12.html
+      - outputs/tab_s12_estimates.rds
+
+  - id: tab_s12_format
+    type: format
+    parent: tab_s12
+    code: code/tab_s12.R
+
+  - id: tab_s13
+    type: table
+    label: Table S13
+    description: PAP H1a reconciliation on emotional political videos
+    engine: r
+    inputs:
+      - data/wave_9.rds
+    code: code/tab_s13.R
+    format: format_tab_s13
+    outputs:
+      - outputs/tab_s13.html
+
+  - id: tab_s13_format
+    type: format
+    parent: tab_s13
+    code: code/tab_s13.R
+
+  - id: tab_s14
+    type: table
+    label: Table S14
+    description: Pairwise outcome correlations on emotional political videos
+    engine: r
+    inputs:
+      - data/wave_9.rds
+    code: code/tab_s14.R
+    format: format_tab_s14
+    outputs:
+      - outputs/tab_s14.html
+
+  - id: tab_s14_format
+    type: format
+    parent: tab_s14
+    code: code/tab_s14.R
+
+  - id: key_numbers
+    type: table
+    label: Key numbers
+    description: Numbers quoted in the manuscript text
+    engine: r
+    parents:
+      - fig_1
+      - fig_2
+      - fig_s14
+      - tab_s12
+      - repeated_videos
+      - tab_s9
+    inputs:
+      - outputs/fig_1_estimates.rds
+      - data/wave_9.rds
+      - outputs/fig_2_wald.rds
+      - outputs/fig_s14_estimates.rds
+      - outputs/tab_s12_estimates.rds
+      - outputs/repeat_summary.rds
+      - outputs/tab_s9_estimates.rds
+    code: code/key_numbers.R
+    format: format_key_numbers
+    outputs:
+      - outputs/key_numbers.html
+
+  - id: key_numbers_format
+    type: format
+    parent: key_numbers
+    code: code/key_numbers.R
+
+  - id: repeated_videos
+    type: transform
+    label: Repeated videos
+    description: Wave 2 repeat-exposure shares and the no-repeat row set
+    engine: r
+    inputs:
+      - data/wave_10.rds
+    code: code/repeated_videos.R
+    outputs:
+      - outputs/repeat_summary.rds
+      - outputs/repeated_videos.rds
+
+  - id: type_contrasts
+    type: transform
+    label: Content-type contrasts
+    description: Wave 1 emotional-versus-other models for Tables S5–S8
+    engine: r
+    inputs:
+      - data/wave_9.rds
+    code: code/type_contrasts.R
+    outputs:
+      - outputs/type_contrasts.rds
+
+  - id: afd_3way
+    type: transform
+    label: AfD triple interactions
+    description: Demeaned treatment × AfD supporter × AfD video models
+    engine: r
+    inputs:
+      - data/wave_9.rds
+      - data/wave_10.rds
+    code: code/afd_3way.R
+    outputs:
+      - outputs/afd_3way.rds
+
+  - id: pid_transitions
+    type: transform
+    label: Party-ID transitions
+    description: Wave 1 to Wave 2 party-identification flows
+    engine: r
+    inputs:
+      - data/df_w9_w10.rds
+    code: code/pid_transitions.R
+    outputs:
+      - outputs/pid_transitions.rds

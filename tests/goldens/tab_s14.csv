@@ -1,0 +1,31 @@
+"row","col","r_t","r_c","delta","stars"
+"Like","Share",0.18,0.2,-0.01,0
+"Like","Bookmark",0.07,0.13,-0.06,3
+"Like","Report",-0.01,0.01,-0.02,0
+"Like","Watch time",0.26,0.3,-0.04,3
+"Like","Skip",-0.21,-0.24,0.03,3
+"Share","Like",0.18,0.2,-0.01,0
+"Share","Bookmark",0.13,0.19,-0.06,2
+"Share","Report",0.04,0.06,-0.02,0
+"Share","Watch time",0.13,0.15,-0.02,2
+"Share","Skip",-0.1,-0.12,0.02,1
+"Bookmark","Like",0.07,0.13,-0.06,1
+"Bookmark","Share",0.13,0.19,-0.06,0
+"Bookmark","Report",0.08,0.13,-0.05,0
+"Bookmark","Watch time",0.11,0.11,-0.01,0
+"Bookmark","Skip",-0.09,-0.1,0,0
+"Report","Like",-0.01,0.01,-0.02,0
+"Report","Share",0.04,0.06,-0.02,0
+"Report","Bookmark",0.08,0.13,-0.05,0
+"Report","Watch time",0.12,0.09,0.03,3
+"Report","Skip",-0.11,-0.07,-0.04,3
+"Watch time","Like",0.26,0.3,-0.04,0
+"Watch time","Share",0.13,0.15,-0.02,0
+"Watch time","Bookmark",0.11,0.11,-0.01,0
+"Watch time","Report",0.12,0.09,0.03,0
+"Watch time","Skip",-0.84,-0.83,-0.01,0
+"Skip","Like",-0.21,-0.24,0.03,0
+"Skip","Share",-0.1,-0.12,0.02,0
+"Skip","Bookmark",-0.09,-0.1,0,0
+"Skip","Report",-0.11,-0.07,-0.04,0
+"Skip","Watch time",-0.84,-0.83,-0.01,2

@@ -1,0 +1,5 @@
+"model","term","estimate","std.error","bh","nobs"
+"Like","workshop_Treatment",-0.012,0.005,0.04,51990
+"Share","workshop_Treatment",-0.003,0.003,0.411,51990
+"Bookmark","workshop_Treatment",0.007,0.003,0.04,51990
+"Engage","workshop_Treatment",-0.002,0.003,NA,51990

@@ -1,0 +1,15 @@
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.log
+outputs/staging/
+
+# Respondent-level inputs. Kept locally; not for version control.
+data/wave_9.rds
+data/wave_10.rds
+data/df_w9_w10.rds
+data/comment_classification.csv
+
+# Filtered Wave 2 rows (respondent–video). Written by repeated_videos.
+outputs/repeated_videos.rds

@@ -1,0 +1,9 @@
+"model","term","estimate","std.error","r_squared","nobs"
+"identification","(Intercept)",0.187,0.005,0.672,3634
+"identification","workshop",-0.018,0.007,0.672,3634
+"identification","party_id_w9_afd_demeaned",0.868,0.017,0.672,3634
+"identification","workshop:party_id_w9_afd_demeaned",-0.049,0.027,0.672,3634
+"conditional_afd","(Intercept)",0.911,0.016,0.008,602
+"conditional_afd","workshop",-0.059,0.026,0.008,602
+"conditional_non_afd","(Intercept)",0.043,0.005,0.001,3032
+"conditional_non_afd","workshop",-0.01,0.007,0.001,3032
