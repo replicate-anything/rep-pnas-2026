@@ -1,5 +1,9 @@
 paper:
   study_handle: rep-pnas
+  materials: folder
+  study_folder: rep-pnas-2026
+  study_repo: replicate-anything/rep-pnas-2026
+  study_ref: main
   title: "Digital literacy alters engagement with emotionally manipulative political content on social media"
   year: 2025
   authors: "Kristina Aleksandrovna Pedersen, Ferdinand Geissler, Felix Hartmann, Johannes Giesecke, Macartan Humphreys, Heike Klüver"
@@ -22,9 +26,21 @@ maintainer:
 languages:
   - r
 
+collections:
+  - IPI
+
+repo: replicate-anything/rep-pnas-2026
+
+sidebar:
+  - Figures
+  - Key numbers
+  - SI Figures
+  - SI Tables
+
 steps:
   - id: fig_1
     type: figure
+    family: Figures
     label: Figure 1
     description: Workshop effects on engagement by content type
     engine: r
@@ -44,6 +60,7 @@ steps:
 
   - id: fig_2
     type: figure
+    family: Figures
     label: Figure 2
     description: Effects by sending party and co-partisanship
     engine: r
@@ -63,6 +80,7 @@ steps:
 
   - id: fig_s2
     type: figure
+    family: SI Figures
     label: Figure S2
     description: Classification of open-ended platform comments
     engine: r
@@ -80,6 +98,7 @@ steps:
 
   - id: fig_s3
     type: figure
+    family: SI Figures
     label: Figure S3
     description: Outcome levels by content type and treatment
     engine: r
@@ -98,6 +117,7 @@ steps:
 
   - id: fig_s4
     type: figure
+    family: SI Figures
     label: Figure S4
     description: Wave 1 effects by emotional strategy
     engine: r
@@ -115,6 +135,7 @@ steps:
 
   - id: fig_s5
     type: figure
+    family: SI Figures
     label: Figure S5
     description: Treatment by content-type interactions
     engine: r
@@ -133,6 +154,7 @@ steps:
 
   - id: fig_s6
     type: figure
+    family: SI Figures
     label: Figure S6
     description: Attrition on standardized pre-treatment covariates
     engine: r
@@ -150,6 +172,7 @@ steps:
 
   - id: fig_s7
     type: figure
+    family: SI Figures
     label: Figure S7
     description: Treatment by covariate interactions on attrition
     engine: r
@@ -167,6 +190,7 @@ steps:
 
   - id: fig_s8
     type: figure
+    family: SI Figures
     label: Figure S8
     description: Wave 1 engagement effects among non-attriters
     engine: r
@@ -185,6 +209,7 @@ steps:
 
   - id: fig_s9
     type: figure
+    family: SI Figures
     label: Figure S9
     description: Wave 2 effects excluding repeated video exposure
     engine: r
@@ -204,6 +229,7 @@ steps:
 
   - id: fig_s10
     type: figure
+    family: SI Figures
     label: Figure S10
     description: Party identification effects conditional on prior identification
     engine: r
@@ -221,6 +247,7 @@ steps:
 
   - id: fig_s11
     type: figure
+    family: SI Figures
     label: Figure S11
     description: Party-identification transitions, full sample
     engine: r
@@ -240,6 +267,7 @@ steps:
 
   - id: fig_s12
     type: figure
+    family: SI Figures
     label: Figure S12
     description: Party-identification transitions, treatment group
     engine: r
@@ -259,6 +287,7 @@ steps:
 
   - id: fig_s13
     type: figure
+    family: SI Figures
     label: Figure S13
     description: Party-identification transitions, control group
     engine: r
@@ -278,6 +307,7 @@ steps:
 
   - id: fig_s14
     type: figure
+    family: SI Figures
     label: Figure S14
     description: Post-treatment PTV effects at each group's mean pre-treatment PTV
     engine: r
@@ -296,6 +326,7 @@ steps:
 
   - id: fig_s15
     type: figure
+    family: SI Figures
     label: Figure S15
     description: Pooled engagement effects without video fixed effects
     engine: r
@@ -314,6 +345,7 @@ steps:
 
   - id: tab_s1
     type: table
+    family: SI Tables
     label: Table S1
     description: Descriptives on videos and video behavior
     engine: r
@@ -332,6 +364,7 @@ steps:
 
   - id: tab_s3
     type: table
+    family: SI Tables
     label: Table S3
     description: Published mean pairwise Cohen's kappa
     engine: r
@@ -347,6 +380,7 @@ steps:
 
   - id: tab_s4_experiment
     type: table
+    family: SI Tables
     label: Table S4 experiment sample
     description: Party by strategy counts for the 400 experiment videos
     engine: r
@@ -364,6 +398,7 @@ steps:
 
   - id: tab_s5
     type: table
+    family: SI Tables
     label: Table S5
     description: Emotional versus neutral, Like, Wave 1
     engine: r
@@ -383,6 +418,7 @@ steps:
 
   - id: tab_s6
     type: table
+    family: SI Tables
     label: Table S6
     description: Emotional versus neutral, Report, Wave 1
     engine: r
@@ -402,6 +438,7 @@ steps:
 
   - id: tab_s7
     type: table
+    family: SI Tables
     label: Table S7
     description: Emotional versus entertainment, Like, Wave 1
     engine: r
@@ -421,6 +458,7 @@ steps:
 
   - id: tab_s8
     type: table
+    family: SI Tables
     label: Table S8
     description: Emotional versus entertainment, Report, Wave 1
     engine: r
@@ -440,6 +478,7 @@ steps:
 
   - id: tab_s9
     type: table
+    family: SI Tables
     label: Table S9
     description: Attrition by treatment condition
     engine: r
@@ -458,6 +497,7 @@ steps:
 
   - id: tab_s10
     type: table
+    family: SI Tables
     label: Table S10
     description: AfD triple interaction, Wave 1
     engine: r
@@ -477,6 +517,7 @@ steps:
 
   - id: tab_s11
     type: table
+    family: SI Tables
     label: Table S11
     description: AfD triple interaction, Wave 2
     engine: r
@@ -496,6 +537,7 @@ steps:
 
   - id: tab_s12
     type: table
+    family: SI Tables
     label: Table S12
     description: Effect of the workshop on AfD identification
     engine: r
@@ -514,6 +556,7 @@ steps:
 
   - id: tab_s13
     type: table
+    family: SI Tables
     label: Table S13
     description: PAP H1a reconciliation on emotional political videos
     engine: r
@@ -531,6 +574,7 @@ steps:
 
   - id: tab_s14
     type: table
+    family: SI Tables
     label: Table S14
     description: Pairwise outcome correlations on emotional political videos
     engine: r
@@ -548,6 +592,7 @@ steps:
 
   - id: key_numbers
     type: table
+    family: Key numbers
     label: Key numbers
     description: Numbers quoted in the manuscript text
     engine: r
